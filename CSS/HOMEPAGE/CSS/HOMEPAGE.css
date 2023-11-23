@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: cosmic;
+    src: url(../CSS/FONTS/LDF-ComicSans/LDFComicSans.ttf);
+}
+
+@font-face {
+    font-family: rick;
+    src: url(../CSS/FONTS/ricky/get_schwifty.ttf);
+}
+
+ body{
+     height: 100vh;
+     background: url(BACKGROUND/background.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+     display: flex;
+     flex-direction: column;
+ }
+
+/* HEADER */
+
+.nav_header{
+    height: 58px;
+    background-color: rgb(31, 30, 30, .5);
+ }
+
+ .nav_header ul{
+    float: inline-start;
+    list-style: none;
+    
+ }
+
+ .nav_header ul li{ 
+    display: inline-block;
+    padding-right: 110px;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: .2s;
+    font-family: cosmic;
+ }
+
+ .nav_header ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
+ }
+
+ #ricky a {
+    color: #16ff00;
+ }
+
+
+ #ricky{
+    margin-top: 12px;
+    margin-left: 10px;
+    font-size: 28px;
+    font-family: rick;
+    color: #16ff00;
+ }
+
+ #ricky a:hover{
+    transition: 1s;
+    color: rgb(0, 0, 0);
+ }
+
+ #market{
+   margin-left: 700px;
+   padding-right: 0px;
+}
+ 
+
+ #market img{
+    height: 25px;
+    width: 25px;
+   
+ } 
+
+ #market a{
+   background-color: transparent;
+ }
+
+ #market a:hover{
+     
+    background-color: transparent;
+ }
+
+ header ul li a:hover{
+     
+    background-color: #16ff00;
+    transition: 1s;
+    color: rgb(0, 0, 0);
+ }
+
+ .dropbtn{
+    cursor: pointer;
+    color: whitesmoke;
+    margin-top: 12px;
+ }
+
+
+ .dropdown{
+   margin-top: 6px;
+   float:right;
+   position: relative;
+   margin-left: 20px;
+   padding-right: 0px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-family: cosmic;
+}
+
+.dropdown-content hr{
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    transition: .5s;
+    background-color: #16ff00;
+}
+
+.show {display: block;}
+
+/* MAIN */
+
+.start{
+    display: flex;
+    justify-content: center;
+    padding-top: 650px;
+}
+
+.startbtn{
+    height: 75px;
+    width: 300px;
+    background-color: #16ff00;
+    font-weight:bolder;
+}
+
+.startbtn span{
+    display: block;
+    text-align: center;
+    line-height: 1em;
+    font-family: cosmic;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+
+.ad-container {
+   display: none;
+   position: fixed;
+   top: 200px;
+   left: 525px;
+   width: 1000px;
+   height: 625px;
+   border-radius: 5px;
+   background-color: white;
+   padding: 10px;
+   text-align: center;
+}
+
+.ad-container p{
+   font-size: 18px;
+   font-weight: bolder;
+}
+
+.ad-container img {
+   max-width: 100%;
+}
+
+#closeAd {
+   margin-top: 10px;
+   margin-bottom: 300px;
+
+   width: 60px;
+   height: 20px;
+   border-radius: 5px;
+}
+
+
+
+
+
+/* FOOTER */
+ footer{
+    background-color: rgb(31, 30, 30);
+    opacity: 50%;
+    height: auto;
+    margin-top: auto;
+    }
+    
+    .Footerz ul{
+    list-style: none;
+    text-align: center;
+    }
+    
+    .Footerz ul li{
+    display: inline-block;
+    font-size: 15px;
+    padding: 20px;
+    
+    }
+
+    .Footerz ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+    }
+
+
+    /* media */
+
+    @media only screen and (min-width:1200px){
+
+      #market{
+         margin-left: 500px;
+         position: relative;
+         top: 7px;
+      }
+
+       .ad-container {
+         position: fixed;
+         top: 200px;
+         left: 380px;
+      }
+  }
+
+
+  @media only screen and (min-width:1800px){
+
+      #market{
+          margin-left: 700px;
+         
+       }
+  }
