@@ -19,8 +19,9 @@
       <div class="wrapper">
         <div class="marketplace">
           <div class="marketplace_header">
-            <h2>MARKETPLACE</h2>
-
+            <h2>MARKETPLACE <img id="coins" src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png"> <span>: 20</span></h2>
+        
+            
             <div class="marketplace_content">
               <button type="submit" id="red">RED SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
               <button type="submit" id="green" >GREEN SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>

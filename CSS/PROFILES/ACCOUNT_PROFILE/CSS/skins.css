@@ -75,9 +75,10 @@
  }
   
  
-#market img{
+  #market img{
      height: 25px;
      width: 25px;
+    
   } 
 
  #market a{
@@ -141,51 +142,44 @@
 .show {display: block;}
 
 /* MAIN */
+
 .wrapper{
-    display: flex;
-    justify-content: center;
+   display: flex;
+   justify-content: center;
 }
 
-.marketplace{
-    margin-top: 225px;
-    height: 500px;
+.skins{
     width: 1000px;
-    border-radius: 20px;
-    background-color: black;
+    height: 500px;
+    background-color: #272829;
+    margin-top: 200px;
+    
 }
 
-.marketplace_header{
-    background-color: #1f1e1e;
-    height: 70px;
-    font-size: 40PX;
+.skins h1{
     text-align: center;
-    color: whitesmoke;
-    text-shadow: 2px 2px black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 800;
-
-    display: block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 1;
+    font-size: 50px;
+    color: rgba(245, 245, 245, 0.763);
+   
 }
 
-.marketplace_header span{
-    position: relative;
-    top:-3px;
-    left: -15px;
-    font-size: 20px;
-}
-
-.marketplace_content{
+.skins-content{
     height: 430px;
-    background-color: black;
+    
     border-radius:20px;
+    margin: 10px auto;
+   padding-left: 125px;
 }
 
-.marketplace_content button{
+.skins-content button{
     height: 200px;
     width: 250px;
     background-color: #302f2f;
     border: none;
     margin-top: 5px;
+    
     border-radius: 10px;
     font-family: cosmic;
     color: whitesmoke;
@@ -193,32 +187,13 @@
     line-height: 8rem;
 }
 
-.marketplace_content img{
-    width: 20px;
-    height: 20px;
-}
-
-.marketplace_content span{
-    color: white;
-}
-
-/* HOVER DESIGNS */
-.marketplace_content button:hover{
-    transform: scale(1.03);
-    transition: .5s;
+.skins-content button:hover{
+    
+    transition: .3s;
 
     
 }
 
-.marketplace_content img:hover{
-    width: 40px;
-    height: 40px;
-    transition: .5s;
-}
-
-#coins{
-    height: 20px;
-}
 
 #red:hover{
     color: red;
@@ -245,9 +220,15 @@
 }
 
 
+
+
+
+
+
+
 /* FOOTER */
  footer{
-    background-color: #1f1e1e;
+    background-color: rgb(31, 30, 30);
     opacity: 50%;
     height: auto;
     margin-top: auto;
@@ -264,12 +245,13 @@
     padding: 20px;
     
     }
-
+    
+    
+    
     .Footerz ul li a{
     text-decoration: none;
     color: whitesmoke;
     }
-
 
 
     /* media */
@@ -290,3 +272,4 @@
            
          }
     }
+

@@ -39,8 +39,9 @@
                 } 
             ?>
             <h2>Highest score: <?php echo $score; ?></h2>
-
-            <button onclick="" type="submit">change password</button>
+            
+            <a href="skins.php"><button onclick="" type="submit">change skin</button></a>
+            <a href="change.php"><button onclick="" type="submit">change password</button></a>
             <a href="../backend/logout.php"><button>sign out</button></a>
           </div>
 

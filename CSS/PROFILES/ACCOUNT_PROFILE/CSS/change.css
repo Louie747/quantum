@@ -75,9 +75,10 @@
  }
   
  
-#market img{
+  #market img{
      height: 25px;
      width: 25px;
+    
   } 
 
  #market a{
@@ -141,113 +142,66 @@
 .show {display: block;}
 
 /* MAIN */
+
 .wrapper{
-    display: flex;
-    justify-content: center;
+   display: flex;
+   justify-content: center;
 }
 
-.marketplace{
-    margin-top: 225px;
+.username{
+    width: 500px;
     height: 500px;
-    width: 1000px;
-    border-radius: 20px;
-    background-color: black;
-}
-
-.marketplace_header{
-    background-color: #1f1e1e;
-    height: 70px;
-    font-size: 40PX;
-    text-align: center;
-    color: whitesmoke;
-    text-shadow: 2px 2px black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 800;
-
-    display: block;
-}
-
-.marketplace_header span{
-    position: relative;
-    top:-3px;
-    left: -15px;
-    font-size: 20px;
-}
-
-.marketplace_content{
-    height: 430px;
-    background-color: black;
-    border-radius:20px;
-}
-
-.marketplace_content button{
-    height: 200px;
-    width: 250px;
-    background-color: #302f2f;
-    border: none;
-    margin-top: 5px;
-    border-radius: 10px;
-    font-family: cosmic;
-    color: whitesmoke;
-    text-shadow: 2px 2px black;
-    line-height: 8rem;
-}
-
-.marketplace_content img{
-    width: 20px;
-    height: 20px;
-}
-
-.marketplace_content span{
-    color: white;
-}
-
-/* HOVER DESIGNS */
-.marketplace_content button:hover{
-    transform: scale(1.03);
-    transition: .5s;
-
+    background-color: #272829;
+    margin-top: 200px;
     
 }
 
-.marketplace_content img:hover{
-    width: 40px;
+.username h1{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 1;
+    font-size: 50px;
+    color: rgba(245, 245, 245, 0.763);
+   
+}
+
+.change{
+    display: flex;
+    flex-direction: column;
+    margin: 75px auto;
+}
+
+.change input{
+    width: 250px;
     height: 40px;
-    transition: .5s;
+    margin-top: 20px;
+    margin: 15px auto;
 }
 
-#coins{
-    height: 20px;
+.change input::placeholder{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
 
-#red:hover{
-    color: red;
+#submit{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+
 }
 
-#green:hover{
-    color: green;
+#submit:hover{
+    background: hsl(115, 100%, 50%, 75%);
+    transition: .3s;
 }
 
-#blue:hover{
-    color: blue;
-}
 
-#yellow:hover{
-    color: yellow;
-}
-
-#purple:hover{
-    color: purple;
-}
-
-#pink:hover{
-    color: pink;
-}
 
 
 /* FOOTER */
  footer{
-    background-color: #1f1e1e;
+    background-color: rgb(31, 30, 30);
     opacity: 50%;
     height: auto;
     margin-top: auto;
@@ -264,12 +218,13 @@
     padding: 20px;
     
     }
-
+    
+    
+    
     .Footerz ul li a{
     text-decoration: none;
     color: whitesmoke;
     }
-
 
 
     /* media */
