@@ -40,12 +40,39 @@ let enhancementY;
 // Flag to track if the snake has the speed boost
 let hasSpeedBoost = false;
 
+const restartGame = () => {
+    // Reset game variables
+    gameOver = false;
+    snakeX = 5;
+    snakeY = 10;
+    snakeBody = [];
+    velocityX = 0;
+    velocityY = 0;
+    walls = [];
+    wallAdded = false;
+    enhancementX = undefined;
+    enhancementY = undefined;
+    hasSpeedBoost = false;
+    
+    // Reset the score to zero
+    score = 0;
+    scoreElement.innerText = `Score: ${score}`;
+
+    // Change food and teleportation positions
+    changeFoodPosition();
+    changeTeleportPosition();
+
+    // Reset HTML content and start the game again
+    playBoard.innerHTML = '';
+    initGame();
+};
+
+
 // Speed boost
 const changeEnhancementPosition = () => {
     enhancementX = Math.floor(Math.random() * 30) + 1;
     enhancementY = Math.floor(Math.random() * 30) + 1;
 };
-
 
 
 // Function to close the popup
@@ -75,6 +102,8 @@ const handleEnhancement = () => {
 // Score
 let score = 0;
 let highscore = localStorage.getItem("high_score") || 0;
+highscoreElement.innerText = `High score: ${highscore}`;
+
 
 const changeFoodPosition = () => {
     food1X = Math.floor(Math.random() * 30) + 1;
@@ -91,9 +120,34 @@ const gameover = document.getElementById("gameover");
 
 const handleGameOver = () => {
     clearInterval(setIntervalId);
-    alert("Game Over! Would you like to play again?");
+         
      // Play the sound effect when the snake eats food
-     gameover.play();
+    const tempScore = document.querySelector(".score").innerText;
+    const score = tempScore.replace("Score: ", "");
+    gameover.play();
+
+    $.ajax({
+        url: "../backend/updateScore.php",
+        method: "post",
+        data:{
+            score
+        },
+        success: function(){
+            
+            const playAgain = confirm("Game Over! Would you like to play again?");
+            if (playAgain) {
+                restartGame();
+            } else {
+                localStorage.clear();
+                alert("Thank you for playing!");
+                window.location.href = "../HTML_FILES/leaderboards.php";
+            }
+        },
+        error: function(){
+            alert("Connection Error");
+        }
+     })
+     
 };
 
 const changeDirection = (e) => {
@@ -191,6 +245,7 @@ const initGame = () => {
         highscore = score >= highscore ? score : highscore;
         localStorage.setItem("high_score", highscore);
         scoreElement.innerText = `Score: ${score}`;
+        highscore = localStorage.getItem("high_score") || 0;
         highscoreElement.innerText = `High score: ${highscore}`;
     }
 
@@ -256,3 +311,5 @@ changeTeleportPosition();
 changeFoodPosition();
 
 document.addEventListener("keydown", changeDirection);
+
+

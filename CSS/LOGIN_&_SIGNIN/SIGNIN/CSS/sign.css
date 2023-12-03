@@ -198,6 +198,12 @@
     text-decoration:underline;
 }
 
+.dropdown{
+    width: 100px;
+    overflow: hidden;
+}
+
+
 
 /* ADS */
 

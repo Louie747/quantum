@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,16 @@
         </div>
 
         <div class="start">
-          <button onclick = "window.location.href='../GAME/GAME.php';" class="startbtn"><span>START</span></button>
+          <?php
+            $location = "";
+            if(isset($_SESSION["acc_id"]))
+            {
+              $location = "window.location.href='../GAME/GAME.php';";
+            }else{
+              $location = "window.location.href='./LOGIN.php'";
+            }
+          ?>
+          <button onclick = "<?php echo $location; ?>" class="startbtn"><span>START</span></button>
         </div>
     </main>
 

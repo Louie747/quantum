@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start(); ?>
+<?php include("../backend/con.php"); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +20,28 @@
           <button onclick = "window.location.href='../HTML_FILES/AVATAR_PROFILE.php';"><img src="../CSS/PROFILES/ACCOUNT_PROFILE/CSS/AVATARS/RICK_SAMPLE.jpg"> </button>
 
           <div class="username_text">
-            <h2>Username</h2>
-            <h2>Highest score: 999</h2>
+            <h2><?php echo $_SESSION["username"]; ?></h2>
+            <?php
+                $score = 0;
+                if(!empty($_SESSION["acc_id"]))
+                {
+                  $acc_id = $_SESSION["acc_id"];
+                  $query = "SELECT * FROM tbl_ranking WHERE account_id = ?";
+                  $stmt = $conn->prepare($query);
+                  $stmt->bind_param("i", $acc_id);
+                  $stmt->execute();
+                  $result = $stmt->get_result();
+                  $data = $result->fetch_assoc();
+
+                  if(!empty($data["score"])){
+                    $score = $data["score"];
+                  }
+                } 
+            ?>
+            <h2>Highest score: <?php echo $score; ?></h2>
 
             <button onclick="" type="submit">change password</button>
-            <button onclick="window.location.href='../HTML_FILES/SIGN.php';" type="submit">sign out</button> 
+            <a href="../backend/logout.php"><button>sign out</button></a>
           </div>
 
 

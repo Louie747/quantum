@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start(); ?>
+<?php include("../backend/con.php"); ?>
+<?php
+
+  if(empty($_SESSION["acc_id"])){
+    header("Location: ../HTML_FILES/LOGIN.php");
+  }
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/SNAKEGAMEs.css">
     <title>game</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- GAME EFFECTS -->
     <audio id="eatSound" src="CSS/BACKGROUND/SOUNDS/EAT.mp3"></audio>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/LOGIN_&_SIGNIN/SIGNIN/CSS/sign.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -38,17 +39,17 @@
                 <div class="sign">
 
                     <div class="input_box">
-                        <input type="text" placeholder="ENTER USERNAME" name="uname" required >
+                        <input type="text" placeholder="ENTER USERNAME" id="username" name="uname" required >
                     </div>
                     <div class="input_box">
-                        <input type="password" placeholder="ENTER PASSWORD" name="pword" required >
+                        <input type="password" placeholder="ENTER PASSWORD" id="password" name="pword" required >
                     </div>
                     <div class="input_box">
-                        <input type="password" placeholder="RE-ENTER PASSWORD" name="rpword" required >
+                        <input type="password" placeholder="RE-ENTER PASSWORD" id="confirmPass" name="rpword" required >
                     </div>
 
                     <div class="input_submit">
-                      <button class="submit_btn" onclick="showVideoAd()">CREATE</button>
+                      <button class="submit_btn">CREATE</button>
                     </div>
 
                     <h2>Already have an account?<a href="LOGIN.PHP"> click here!</a></h2>
@@ -98,33 +99,7 @@
             });
         });
 
-        function showVideoAd() {
-            const videoAdModal = document.getElementById("videoAdModal");
-            const videoAd = document.getElementById("videoAd");
-
-            // Show the video ad modal
-            videoAdModal.style.display = "block";
-
-            // Play the video
-            videoAd.play();
-
-            // Close the video ad modal after 10 seconds
-            setTimeout(function () {
-                closeVideoAd();
-            }, 10000);
-        }
-
-        function closeVideoAd() {
-            const videoAdModal = document.getElementById("videoAdModal");
-            const videoAd = document.getElementById("videoAd");
-
-            // Pause the video
-            videoAd.pause();
-
-            // Hide the video ad modal
-            videoAdModal.style.display = "none";
-        }
     </script>
-
+<script src="../jquery/signup.js"></script>
 </body>
 </html>

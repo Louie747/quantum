@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/LOGIN_&_SIGNIN/LOGIN/CSS/LOGIN.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -18,14 +19,14 @@ include "../PHP_INCLUDES/BASIC_HEADER/BASIC_HEADER.php"
     <main>
 
         <div class="signin">
-            <form action="../webdewvvv/DATABASE/DATA.txt.txt" method="post">
+            <form action="" method="post">
                 <div class="sign">
 
                     <div class="input_box">
-                        <input type="text" placeholder="ENTER USERNAME" name="uname" required >
+                        <input type="text" placeholder="ENTER USERNAME" id="username" name="uname"  >
                     </div>
                     <div class="input_box">
-                        <input type="password" placeholder="ENTER PASSWORD" name="pword" required >
+                        <input type="password" placeholder="ENTER PASSWORD" id="password" name="pword"  >
                     </div>
 
                     <div class="input_submit">
@@ -70,5 +71,6 @@ include "../PHP_INCLUDES/FOOTER/FOOTER.php"
         }
         </script>
 
+        <script src="../jquery/login.js"></script>
 </body>
 </html>

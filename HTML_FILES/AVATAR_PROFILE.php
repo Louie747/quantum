@@ -23,15 +23,15 @@
           </div>
 
           <div class="prof_avatars">
-            <button onclick=""><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/RICK_SAMPLE.jpg"></button>
-            <button onclick=""><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/JERRY_SAMPLE.jpg"></button>
-            <button onclick=""><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/MORTY_SAMPLE.jpg"></button>
+            <button class="avatar-js"><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/RICK_SAMPLE.jpg"></button>
+            <button class="avatar-js"><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/JERRY_SAMPLE.jpg"></button>
+            <button class="avatar-js"><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/MORTY_SAMPLE.jpg"></button>
             
           </div>
 
           <div class="prof_avatars">
-            <button onclick=""><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/SQUACH_SAMPLE.jpg"></button>
-            <button onclick=""><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/SUM_SAMPLE.jpg"></button>
+            <button class="avatar-js"><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/SQUACH_SAMPLE.jpg"></button>
+            <button class="avatar-js"><img src="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/SUM_SAMPLE.jpg"></button>
           </div>
         </div>
       </div>

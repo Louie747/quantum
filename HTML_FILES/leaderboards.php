@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start(); ?>
+<?php include("../backend/con.php"); ?>
+<?php 
+    if(empty($_SESSION["acc_id"])){
+        header("Location: ./LOGIN.php");
+    }
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,53 +37,52 @@
                         <th>ACCOUNT:</th>
                         <th>SCORES:</th>
                     </tr>
+                    <?php
+                        $rowCount = 0; 
+                        $query = "SELECT ac.username, tr.score, tr.account_id FROM tbl_ranking tr 
+                        INNER JOIN tbl_account ac ON ac.account_id = tr.account_id 
+                        ORDER BY tr.score DESC;";
+                        $stmt = $conn->prepare($query);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
 
+                        while(($row = $result->fetch_assoc()) && ($rowCount != 10)){
+                                $rowCount++;
+                    ?>
                     <tr>
-                        <th>1</th>
-                        <th>PLAYER #23</th>
-                        <th>533</th>
+                        <th><?php echo $rowCount; ?></th>
+                        <th><?php echo $row["username"]; ?></th>
+                        <th><?php echo $row["score"]; ?></th>
                     </tr>
+                    <?php } ?>
 
-                    <tr>
-                        <th>2</th>
-                        <th>PLAYER #33</th>
-                        <th>513</th>
-                    </tr>
-
-                    <tr>
-                        <th>2</th>
-                        <th>PLAYER #24</th>
-                        <th>493</th>
-                    </tr>
-
-                    <tr>
-                        <th>3</th>
-                        <th>PLAYER #25</th>
-                        <th>443</th>
-                    </tr>
-
-                    <tr>
-                        <th>4</th>
-                        <th>PLAYER #88</th>
-                        <th>425</th>
-                    </tr>
-
-                    <tr>
-                        <th>5</th>
-                        <th>PLAYER #44</th>
-                        <th>325</th>
-                    </tr>
                 </table>
 
                 <div class="personal_score">
-                        <h2>5</h2>
-                        <h2>PLAYER #68</h2>
-                        <h2>125</h2>
+                        <?php
+                            $userRank = 0;
+                            $rankCount = 0;
+                            $userScore = 0;
+                            $query = "SELECT * FROM tbl_ranking ORDER BY score DESC";
+                            $stmt = $conn->prepare($query);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            while($row = $result->fetch_assoc()){
+                                    $rankCount++;
+                                if($row["account_id"] == $_SESSION["acc_id"]){
+                                    $userRank = $rankCount;
+                                    $userScore = $row["score"];
+                                }
+                            }
+                        ?>
+                        <h2><?php echo $userRank; ?></h2>
+                        <h2><?php echo $_SESSION["username"]; ?></h2>
+                        <h2><?php echo $userScore; ?></h2>
                 </div>
 
                 <div class="home_rest">
-                    <button type="button">HOME</button>
-                    <button type="button">RESTART</button>
+                    <a href="./HOMEPAGE.php"><button type="button">HOME</button></a>
+                    <a href="../GAME/GAME.php"><button type="button">RESTART</button></a>
 
                 </div>
                 
