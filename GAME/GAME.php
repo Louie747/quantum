@@ -66,6 +66,17 @@
             <span class="score">Score: 0</span>
             <span class="high_score">High score: 0</span>
           </div>
+        
+        <?php 
+          $acc_id = $_SESSION["acc_id"];
+          $query = "SELECT * FROM tbl_details WHERE account_id = ?";
+          $stmt = $conn->prepare($query);
+          $stmt->bind_param("i", $acc_id);
+          $stmt->execute();
+          $result = $stmt->get_result();
+          $data = $result->fetch_assoc();
+        ?>
+        <input type="text" style="display: none;" value="<?php echo $data["skin"]; ?>" id="skin">
         <div class="play_board"></div>
         </div>
         <div class="rickandroll">

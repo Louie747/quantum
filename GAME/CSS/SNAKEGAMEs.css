@@ -190,6 +190,42 @@
    background: orange;
 }
 
+/* Default snake styling */
+.play_board .head-yellow {
+  background: yellow; /* Default color */
+  /* Other default styles for the snake */
+}
+
+/* Red snake skin */
+.play_board .head-red {
+  background-color: #ff0000; /* Red color */
+  /* Additional styles for the red snake */
+}
+
+/* Green snake skin */
+.play_board .head-green {
+  background-color: #00ff00; /* Green color */
+  /* Additional styles for the green snake */
+}
+
+/* Blue snake skin */
+.play_board .head-blue {
+  background-color: #0000ff; /* Blue color */
+  /* Additional styles for the blue snake */
+}
+
+/* Purple snake skin */
+.play_board .head-purple {
+  background-color: #800080; /* Purple color */
+  /* Additional styles for the purple snake */
+}
+
+/* Pink snake skin */
+.play_board .head-pink {
+  background-color: #ff69b4; /* Pink color */
+  /* Additional styles for the pink snake */
+}
+
 .invisibleEffect {
    width: 20px;
    height: 20px;
@@ -280,6 +316,10 @@
 
 
   }
+
+
+
+  
 
 
   

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start(); ?>
+<?php include("../backend/con.php"); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/MARKETPLACE/CSS/MARKETPLACE.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -19,16 +22,32 @@
       <div class="wrapper">
         <div class="marketplace">
           <div class="marketplace_header">
-            <h2>MARKETPLACE <img id="coins" src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png"> <span>: 20</span></h2>
+            <?php 
+                $gold = 0;
+                if(!empty($_SESSION["acc_id"])){
+                  $acc_id = $_SESSION["acc_id"];
+                  $query = "SELECT * FROM tbl_details WHERE account_id = ?";
+                  $stmt = $conn->prepare($query);
+                  $stmt->bind_param("i", $acc_id);
+                  $stmt->execute();
+                  $result = $stmt->get_result();
+                  $data = $result->fetch_assoc();
+                  $gold = $data["gold"];
+
+                  if(empty($gold)) $gold = 0;
+                }
+            ?>
+            <h2>MARKETPLACE <img id="coins" src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png"> 
+            <span>: <?php echo $gold; ?></span></h2>
         
             
             <div class="marketplace_content">
-              <button type="submit" id="red">RED SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
-              <button type="submit" id="green" >GREEN SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
-              <button type="submit" id="blue">BLUE SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
-              <button type="submit" id="yellow">YELLOW SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
-              <button type="submit" id="purple">PURPLE SNAKE SKIN COLOR <br><span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
-              <button type="submit" id="pink">PINK SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
+              <button type="submit" class="color-js" value="head-red" id="red">RED SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
+              <button type="submit" class="color-js" value="head-green" id="green" >GREEN SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
+              <button type="submit" class="color-js" value="head-blue" id="blue">BLUE SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
+              <button type="submit" class="color-js" value="head-yellow" id="yellow">YELLOW SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
+              <button type="submit" class="color-js" value="head-purple" id="purple">PURPLE SNAKE SKIN COLOR <br><span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
+              <button type="submit" class="color-js" value="head-pink" id="pink">PINK SNAKE SKIN COLOR <br> <span><img src="../CSS/MARKETPLACE/CSS/BACKGROUND/IMAGES/coin.png" alt="coin"> 10 GOLD COINS</span></button>
           </div>
         </div>
       </div>
@@ -67,6 +86,6 @@
           }
         }
         </script>
-
+<script src="../jquery/marketplace.js"></script>
 </body>
 </html>

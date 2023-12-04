@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/PROFILES/ACCOUNT_PROFILE/CSS/change.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>ACCOUNT PROFILE</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
         <div class="username">
             <h1>CHANGE PASSWORD</h1>
                 <div class="change">
-                    <input type="text" name="current" id="current" placeholder="CURRENT PASSWORD">
+                    <input type="password" name="current" id="current" placeholder="CURRENT PASSWORD">
                     <input type="password" name="newpass" id="newpass" placeholder="NEW PASSWORD">
                     <input type="password" name="repass" id="repass" placeholder="RE-PASSWORD">
                     <input type="submit" id="submit" value="SUBMIT">
@@ -60,6 +61,6 @@
           }
         }
         </script>
-
+<script src="../jquery/change.js"></script>
 </body>
 </html>

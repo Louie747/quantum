@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 03, 2023 at 02:52 AM
+-- Generation Time: Dec 04, 2023 at 12:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -38,8 +38,8 @@ CREATE TABLE `tbl_account` (
 --
 
 INSERT INTO `tbl_account` (`account_id`, `username`, `password`) VALUES
-(1, 'jcdavid', '$2y$10$dlJKsZNPSpHqk41OxwUl1OAiWE7EYoK6J1QghuiJrSi2wpzzQEdbi'),
-(3, 'jcdavid1', '$2y$10$hCLbcxau.G6jvBAmBQTmY.7dqPrbf/.5Lj7bUbOkMHY7gEDRuFXCO');
+(1, 'jcdavid', '$2y$10$IeMlNJ3td.LP8drWCiAMkOloBavyA/eOV7u4Jci5OnqN6A6p7WqQS'),
+(2, 'jcdavid1', '$2y$10$N898kJh0VkaCufjQRurtQeNC75hsp3ilF0YU5CAhGB8RGKbCquXn2');
 
 -- --------------------------------------------------------
 
@@ -50,7 +50,7 @@ INSERT INTO `tbl_account` (`account_id`, `username`, `password`) VALUES
 CREATE TABLE `tbl_details` (
   `account_id` int(11) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
-  `gold` int(11) DEFAULT NULL,
+  `gold` int(11) DEFAULT 0,
   `skin` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -59,8 +59,8 @@ CREATE TABLE `tbl_details` (
 --
 
 INSERT INTO `tbl_details` (`account_id`, `avatar`, `gold`, `skin`) VALUES
-(1, NULL, 2, NULL),
-(3, NULL, 1, NULL);
+(1, '../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/JERRY_SAMPLE.jpg', 50, 'head-purple'),
+(2, '../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATARS/SUM_SAMPLE.jpg', 50, 'head-pink');
 
 -- --------------------------------------------------------
 
@@ -78,8 +78,33 @@ CREATE TABLE `tbl_ranking` (
 --
 
 INSERT INTO `tbl_ranking` (`account_id`, `score`) VALUES
-(1, 16),
-(3, 10);
+(1, 3),
+(2, 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_skins`
+--
+
+CREATE TABLE `tbl_skins` (
+  `account_id` int(11) NOT NULL,
+  `skin_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_skins`
+--
+
+INSERT INTO `tbl_skins` (`account_id`, `skin_name`) VALUES
+(1, 'head-yellow'),
+(1, 'head-blue'),
+(1, 'head-pink'),
+(2, 'head-yellow'),
+(2, 'head-pink'),
+(1, 'head-green'),
+(1, 'head-purple'),
+(1, 'head-red');
 
 --
 -- Indexes for dumped tables
@@ -99,7 +124,7 @@ ALTER TABLE `tbl_account`
 -- AUTO_INCREMENT for table `tbl_account`
 --
 ALTER TABLE `tbl_account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

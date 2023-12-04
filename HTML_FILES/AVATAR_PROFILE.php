@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/PROFILES/AVATAR_PROFILES/CSS/AVATAR_PROFILES.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>AVATAR_PROFILE</title>
 </head>
 <body>
 
     <!-- HEADER -->
-
-
     <?php 
     include "../PHP_INCLUDES/BASIC_HEADER/BASIC_HEADER.php"
     ?>
@@ -74,6 +73,6 @@
           }
         }
         </script>
-
+<script src="../jquery/avatar.js"></script>
 </body>
 </html>

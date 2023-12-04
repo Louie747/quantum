@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/PROFILES/ACCOUNT_PROFILE/CSS/skins.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>ACCOUNT PROFILE</title>
 </head>
 <body>
@@ -20,12 +21,12 @@
             <h1>CHOOSE YOUR SKIN</h1>
 
             <div class="skins-content">
-              <button type="submit" id="red">RED SNAKE SKIN COLOR</button>
-              <button type="submit" id="green" >GREEN SNAKE SKIN COLOR</button>
-              <button type="submit" id="blue">BLUE SNAKE SKIN COLOR</button>
-              <button type="submit" id="yellow">YELLOW SNAKE SKIN COLOR</button>
-              <button type="submit" id="purple">PURPLE SNAKE SKIN COLOR</button>
-              <button type="submit" id="pink">PINK SNAKE SKIN COLOR</button>
+              <button type="submit" class="color-js" value="head-red" id="red">RED SNAKE SKIN COLOR </button>
+              <button type="submit" class="color-js" value="head-green" id="green" >GREEN SNAKE SKIN COLOR </button>
+              <button type="submit" class="color-js" value="head-blue" id="blue">BLUE SNAKE SKIN COLOR </button>
+              <button type="submit" class="color-js" value="head-yellow" id="yellow">YELLOW SNAKE SKIN COLOR </button>
+              <button type="submit" class="color-js" value="head-purple" id="purple">PURPLE SNAKE SKIN COLOR </button>
+              <button type="submit" class="color-js" value="head-pink" id="pink">PINK SNAKE SKIN COLOR </button>
             </div>
                
         </div> 
@@ -67,5 +68,6 @@
         }
         </script>
 
+<script src="../jquery/skin.js"></script>
 </body>
 </html>

@@ -295,9 +295,10 @@ const initGame = () => {
     snakeX += velocityX;
     snakeY += velocityY;
 
+    const skinName = document.getElementById("skin").value;
     // Render the snake on the board
     for (let i = 0; i < snakeBody.length; i++) {
-        htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+        htmlMarkup += `<div class="${skinName}" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
         // Check for collision with its own body
         if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
             gameOver = true;
